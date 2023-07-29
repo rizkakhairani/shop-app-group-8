@@ -1,11 +1,5 @@
 <?php
 require_once __DIR__ . '/../process/process_product.php';
-require_once __DIR__ . '/../process/process_login.php';
-
-$isAllowed = $loginController->isAllowed("barang");
-if ($isAllowed === false) {
-    header("Location: ../public/login.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +12,12 @@ if ($isAllowed === false) {
     <link rel="stylesheet" href="../assets/main.css" />
 </head>
 <body>
-    <?php include ('sidebar.php'); ?>
+    <?php
+        include ('sidebar.php'); 
+        if ($productAccess === false) {
+            header("Location: index.php");
+        }
+    ?>
     <div class="container">
         <?php
         // Include the process_product.php file to handle the CRUD operations

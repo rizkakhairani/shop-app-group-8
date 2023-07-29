@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Check if product_id is provided (if it's an edit operation)
     if (isset($_POST["product_id"])) {
         $currentUserId = $loginController->currentUserId();
-        if ($currentUser === false) {
+        if ($currentUserId === false) {
             header("Location: ../public/login.php");
         }
         
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         // It's a new product, create it
         $currentUserId = $loginController->currentUserId();
-        if ($currentUser === false) {
+        if ($currentUserId === false) {
             header("Location: ../public/login.php");
         }
 

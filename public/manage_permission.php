@@ -1,15 +1,10 @@
 <?php
 require_once __DIR__ . '/../process/process_permission.php';
-require_once __DIR__ . '/../process/process_login.php';
-
-$isAllowed = $loginController->isAllowed("hakakses");
-if ($isAllowed === false) {
-    header("Location: ../public/login.php");
-}
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Manage Hak Akses</title>
     <!-- Bootstrap CSS -->
@@ -18,7 +13,12 @@ if ($isAllowed === false) {
     <link rel="stylesheet" href="../assets/main.css" />
 </head>
 <body>
-    <?php include ('sidebar.php'); ?>
+    <?php
+        include ('sidebar.php'); 
+        if ($permissionAccess === false) {
+            header("Location: index.php");
+        }
+    ?>
     <div class="container">
         <h2 class="my-4">Manage Hak Akses</h2>
         <div class="mb-4">
@@ -59,8 +59,8 @@ if ($isAllowed === false) {
                             <td><?php echo $permission->getName(); ?></td>
                             <td><?php echo $permission->getNotes(); ?></td>
                             <td>
-                                <a href="?edit=<?php echo $permission->getId(); ?>" class="btn btn-sm btn-primary">Ubah</a>
-                                <a href="?delete=<?php echo $permission->getId(); ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                    <a href="?edit=<?php echo $permission->getId(); ?>" class="btn btn-sm btn-primary">Ubah</a>
+                                    <a href="?delete=<?php echo $permission->getId(); ?>" class="btn btn-sm btn-danger">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

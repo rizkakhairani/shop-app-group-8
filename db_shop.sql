@@ -18,7 +18,7 @@ CREATE TABLE `permissions` (
   `notes` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `permissions_UN` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- db_shop.suppliers definition
@@ -48,7 +48,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_UN` (`username`),
   KEY `users_FK` (`permission_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- db_shop.products definition
@@ -63,7 +63,7 @@ CREATE TABLE `products` (
   UNIQUE KEY `products_UN` (`name`),
   KEY `products_FK` (`user_id`),
   CONSTRAINT `products_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- db_shop.sells definition
@@ -99,10 +99,6 @@ CREATE TABLE `orders` (
 
 
 -- first user and permission
-INSERT INTO permissions
-(id, name, notes)
-VALUES(1, 'Super Admin', 'barang,hakakses,pengguna');
+INSERT INTO permissions (id, name, notes) VALUES(1, 'Super Admin', 'barang,hakakses,pengguna,pembelian,penjualan,pelanggan,supplier,laporankeuntungan');
 
-INSERT INTO users
-(id, username, first_name, last_name, password, phone, address, permission_id)
-VALUES(1, 'super_admin', 'Super', 'Admin', '$2y$10$Hu.CmzthLoM7y3jV.t/fK.Ew67UrUkHkV8mF6PaUjhvRhSE2KOdy6', '628212345642', 'Jakarta', 1);
+INSERT INTO users (id, username, first_name, last_name, password, phone, address, permission_id) VALUES(1, 'super_admin', 'Super', 'Admin', '$2y$10$EtuczdKSIt93Aa8iwMAKOeUPVOhVzQYUietSCj0..uGlodthyyeCq', '628212345642', 'Jakarta', 1);

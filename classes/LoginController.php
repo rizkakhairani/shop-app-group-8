@@ -51,7 +51,11 @@ class LoginController
     }
 
     public function currentUserId()
-    {        
+    {   
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
         if (isset($_SESSION['userId'])) {
             return $_SESSION['userId'];
         }
@@ -61,7 +65,10 @@ class LoginController
 
     public function isAllowed($page)
     {       
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
         if (isset($_SESSION['permissionNotes'])) {
             $permissionArr = explode(',', $_SESSION['permissionNotes']);
             

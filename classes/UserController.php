@@ -43,7 +43,7 @@ class UserController
     public function updateUser($id, $username, $password, $first_name, $last_name, $phone, $address, $permission_id)
     {
         // Sanitize user input before using in the query to prevent SQL injection
-        $user_id = (int)$user_id; // Convert to integer for safety
+        $id = (int)$id; // Convert to integer for safety
         $username = mysqli_real_escape_string($this->connection, $username);
         $first_name = mysqli_real_escape_string($this->connection, $first_name);
         $last_name = mysqli_real_escape_string($this->connection, $last_name);

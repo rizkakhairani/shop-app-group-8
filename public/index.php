@@ -9,6 +9,14 @@
     <style>
         body {
             padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .box {
@@ -21,6 +29,7 @@
             align-items: center;
             border-radius: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .box:hover {
@@ -33,74 +42,63 @@
             margin-top: 50px;
         }
 
-        h2 {
-            display: flex;
-            justify-content: center;
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 30px;
         }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+
     </style>
 </head>
 <body>
     <?php include ('sidebar.php'); ?>
     <div class="container">
-        <h2>Beranda</h2>
-        <div class="box-container">
-            <!-- Box 1: Manage Permissions -->
-            <a href="manage_permission.php">
-                <div class="box">
-                    <h5>Manage Hak Akses</h5>
-                </div>
-            </a>
+        <h1>Group 8</h1>
 
-            <!-- Box 2: Manage Users -->
-            <a href="manage_user.php">
-                <div class="box">
-                    <h5>Manage Pengguna</h5>
-                </div>
-            </a>
-            
-            <!-- Box 3: Manage Products -->
-            <a href="manage_product.php">
-                <div class="box">
-                    <h5>Manage Barang</h5>
-                </div>
-            </a>
-        </div>
-
-        <div class="box-container">
-            <!-- Box 1: Manage Permissions -->
-            <a href="manage_permission.php">
-                <div class="box">
-                    <h5>Manage Hak Akses</h5>
-                </div>
-            </a>
-
-            <!-- Box 2: Manage Users -->
-            <a href="manage_user.php">
-                <div class="box">
-                    <h5>Manage Pengguna</h5>
-                </div>
-            </a>
-            
-            <!-- Box 3: Manage Products -->
-            <a href="manage_product.php">
-                <div class="box">
-                    <h5>Manage Barang</h5>
-                </div>
-            </a>
-        </div>
-
-        <div class="box-container">
-            <!-- Box 1: Manage Permissions -->
-            <a href="manage_permission.php">
-                <div class="box">
-                    <h5>Manage Hak Akses</h5>
-                </div>
-            </a>
+        <table>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+            </tr>
+            <tr>
+                <td>2602311086</td>
+                <td>Aditya Muhammad Fallen</td>
+            </tr>
+            <tr>
+                <td>2602291626</td>
+                <td>Gede Abdullah</td>
+            </tr>
+            <tr>
+                <td>2602299824</td>
+                <td>Rizka Khairani</td>
+            </tr>
+            <tr>
+                <td>2602287061</td>
+                <td>Zikri Zakaria Salam</td>
+            </tr>
+        </table>
     </div>
 
     <!-- Bootstrap JS (Optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
