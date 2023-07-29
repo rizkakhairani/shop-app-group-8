@@ -1,0 +1,40 @@
+body {
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.table-actions {
+    white-space: nowrap;
+}
+
+.table-actions a {
+    margin-right: 5px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+}
+
+.button-centered {
+    text-align:center
+}
+
+.nav-item {
+    margin: 10px;
+}
+
+.nav-item img {
+    max-width: auto;
+    max-height: 30px;
+    border-radius: 10px;
+    margin: 2px auto;
+}
